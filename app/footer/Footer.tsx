@@ -21,7 +21,7 @@ const Footer = () => {
           <Link
             href="https://github.com/02-Shubham"
             target="_blank"
-            aria-label="Shubham's GitHub Profile"
+            aria-label="Shubham&apos;s GitHub Profile"
           >
             <span className="underline underline-offset-2 hover:no-underline">
               <AnimatedBody text={"Shubham Sahu"} className={"m-0 p-0"} />

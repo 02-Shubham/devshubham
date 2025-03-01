@@ -13,7 +13,7 @@ export const songs = [
     link: "https://open.spotify.com/album/11q4Tt1RzwrFzF2Vddc2yO",
   },
   {
-    title: "Martin's Sofa",
+    title: "Martin Sofa",
     artist: "Headie One",
     image: require(".//../../public/songs/martins-sofa.jpg"),
     link: "https://open.spotify.com/album/5ywIBJnydB9IMqgg0XDU6O",
