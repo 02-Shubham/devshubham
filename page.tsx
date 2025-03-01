@@ -1,19 +1,19 @@
 "use client";
-import Hero from "./hero-section/Hero";
+import Hero from "./app/hero-section/Hero";
 import useBlobity from "blobity/lib/react/useBlobity";
 import { useEffect } from "react";
 // import { ScrollerMotion } from "scroller-motion";
-import PreLoader from "./animations/PreLoader/PreLoader";
-import { initialBlobityOptions } from "./utils/BlobityConfig";
-import NavBar from "./navbar/NavBar";
+import PreLoader from "./app/animations/PreLoader/PreLoader";
+import { initialBlobityOptions } from "./app/utils/BlobityConfig";
+import NavBar from "./app/navbar/NavBar";
 
 import dynamic from "next/dynamic";
-import Reviews from "./reviews-section/ReviewGrid";
-const Work = dynamic(() => import("./work-section/Work"));
-const About = dynamic(() => import("./about-section/About"));
-const Blog = dynamic(() => import("./blog-section/BlogGrid"));
-const Contact = dynamic(() => import("./contact-section/Contact"));
-const Footer = dynamic(() => import("./footer/Footer"));
+import Reviews from "./app/reviews-section/ReviewGrid";
+const Work = dynamic(() => import("./app/work-section/Work"));
+const About = dynamic(() => import("./app/about-section/About"));
+const Blog = dynamic(() => import("./app/blog-section/BlogGrid"));
+const Contact = dynamic(() => import("./app/contact-section/Contact"));
+const Footer = dynamic(() => import("./app/footer/Footer"));
 
 export default function Home() {
   const blobityInstance = useBlobity(initialBlobityOptions);
