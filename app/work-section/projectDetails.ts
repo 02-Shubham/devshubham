@@ -53,6 +53,17 @@ export const devProjects = [
     image: require(".//../../public/projects/ecell.png"),
     available: true,
   },
+  {
+    id: 4,
+    name: "BloodCall",
+    description:
+      "A web application that connects blood donors with those in need, facilitating easy access to blood donation information.",
+    technologies: ["React", "Tailwind CSS", "Node.js","GoogleMaps API"],
+    github: "https://github.com/02-Shubham/donor-pulse",
+    demo: "https://bloodcall.vercel.app/",
+    image: require(".//../../public/projects/bloodcall.png"),
+    available: true,
+  },
 ];
 
 // export const designProjects = [
