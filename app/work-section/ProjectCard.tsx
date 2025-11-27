@@ -123,7 +123,7 @@ const ProjectCard = ({
             "mt-4 w-[90%] max-w-[457px] text-[16px] font-semibold text-[#95979D] "
           }
         />
-        <div className="mt-9 flex gap-4">
+        <div className=" mt-9 flex gap-4">
           {technologies.map((tech, id) => (
             <AnimatedTitle
               text={tech}
