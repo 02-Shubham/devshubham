@@ -123,7 +123,7 @@ const ProjectCard = ({
             "mt-4 w-[90%] max-w-[457px] text-[16px] font-semibold text-[#95979D] "
           }
         />
-        <div className=" mt-9 flex gap-4">
+        <div className=" mt-9 flex flex-wrap gap-4 max-w-[400px]">
           {technologies.map((tech, id) => (
             <AnimatedTitle
               text={tech}
@@ -131,7 +131,7 @@ const ProjectCard = ({
               charSpace={"mr-[0.01em]"}
               key={id}
               className={
-                "text-[14px] font-bold uppercase md:text-[16px] lg:text-[18px] "
+                "text-[12px] font-bold uppercase md:text-[14px] lg:text-[16px] "
               }
             />
           ))}
