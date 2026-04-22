@@ -1,6 +1,6 @@
 import "./globals.css";
 import { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -11,6 +11,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.devshubham.vercel.app"),
   title: "Shubham Sahu — Frontend Engineer",
   description:
     "Frontend Engineer and Web Designer, currently at India. Focused on interfaces and user experiences",
@@ -35,12 +36,10 @@ export const metadata: Metadata = {
     "frontend developer portfolio",
     "creative developer portfolio",
   ],
-  colorScheme: "dark",
   openGraph: {
     title: "Shubham Sahu — Frontend Engineer",
     description:
       "Frontend Engineer and Web Designer, currently at India. Focused on interfaces and user experiences",
-      // todo: add twitter handle
     url: "https://www.devshubham.vercel.app",
     siteName: "www.devshubham.vercel.app",
     images: [
@@ -59,12 +58,9 @@ export const metadata: Metadata = {
     title: "Shubham Sahu — Frontend Engineer",
     description:
       "Frontend Engineer and Web Designer, currently at India. Focused on interfaces and user experiences",
-      // todo: add twitter handle
     creator: "Shubham7611215",
     creatorId: "1243720976552144897",
-    images: [
-      "/",
-    ],
+    images: ["/"],
   },
   robots: {
     index: true,
@@ -80,6 +76,11 @@ export const metadata: Metadata = {
     },
   },
   category: "technology",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0E1016",
+  colorScheme: "dark",
 };
 
 type RootLayoutProps = {
