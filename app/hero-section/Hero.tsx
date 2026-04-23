@@ -140,7 +140,7 @@ const Hero = () => {
           variants={bodyAnimation}
         >
           <p className="text-right text-[16px] font-semibold text-[#e4ded7] md:text-[20px]">
-          I love building innovative projects thats make an impact.
+            I love building innovative projects that make an impact.
           </p>
         </motion.div>
       </div>

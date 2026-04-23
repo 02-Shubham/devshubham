@@ -54,7 +54,7 @@ const SkillGrid = () => {
       {skills.map((skillGroup, index) => (
         <motion.div
           key={index}
-          className="flex flex-col gap-4 rounded-2xl border border-[#e4ded7]/10 bg-[#161922] p-6 transition-all hover:border-[#e4ded7]/30 hover:bg-[#1c202a]"
+          className="flex flex-col gap-4 p-6 transition-all w-full max-w-[422px] mx-auto rounded-2xl gradient-border-card"
           variants={itemVariants}
         >
           <h3 className="text-[20px] font-bold text-[#e4ded7] md:text-[24px]">
@@ -64,7 +64,7 @@ const SkillGrid = () => {
             {skillGroup.techs.map((tech, techIndex) => (
               <span
                 key={techIndex}
-                className="rounded-full bg-[#0E1016] px-3 py-1 text-[14px] font-medium text-[#e4ded7]/70"
+                className="rounded-md border border-dashed border-[#e4ded7]/30 bg-[#0E1016] px-3 py-1 text-[14px] font-medium text-[#e4ded7]/70"
               >
                 {tech}
               </span>
