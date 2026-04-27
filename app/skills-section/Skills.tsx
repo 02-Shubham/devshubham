@@ -4,7 +4,7 @@ import AnimatedTitle from "../animations/AnimatedTitle";
 const Skills = () => {
   return (
     <section
-      className="relative z-10 flex w-full flex-col items-center justify-center bg-[#0E1016] bg-cover bg-center pt-16 pb-32 md:pt-20 md:pb-44 lg:pt-20 lg:pb-56"
+      className="relative z-10 flex w-full flex-col items-center justify-center bg-[#0E1016] bg-cover bg-center pt-10 pb-32 md:pt-12 md:pb-44 lg:pt-10 lg:pb-56"
       id="skills"
     >
       <div className="mx-auto flex w-[90%] flex-col items-center justify-center lg:max-w-[1212.8px]">

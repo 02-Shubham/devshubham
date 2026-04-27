@@ -20,7 +20,7 @@ const Contact = () => {
       initial="initial"
       animate="animate"
     >
-      <div className="mx-auto  flex w-[90%] flex-col items-center justify-center pt-10 md:pt-0">
+      <div className="mx-auto flex w-[90%] flex-col items-start justify-center pt-10 md:pt-0">
         <div
           className={`flex flex-col items-start justify-center ${monaSans.className} relative w-full sm:items-center lg:max-w-[1440px] `}
         >
@@ -35,12 +35,12 @@ const Contact = () => {
             width={100}
             height={100}
             alt="Heart Icon"
-            className="heartbeat md:-bottom-18 absolute -bottom-5 left-64 w-[120px] sm:-bottom-14 sm:left-[40%] md:left-[40%] md:w-[150px] lg:-bottom-16 lg:left-[42%] lg:w-[230px]"
+            className="heartbeat md:-bottom-18 absolute -bottom-20 left-10 w-[120px] sm:-bottom-14 sm:left-[40%] md:left-[40%] md:w-[150px] lg:-bottom-16 lg:left-[42%] lg:w-[230px]"
           />
         </div>
         
-        <div className="mt-20 flex w-full flex-col items-end justify-center gap-16 sm:mt-32 sm:gap-12 md:mt-40 md:flex-row md:items-start md:justify-between lg:mt-12 lg:max-w-[1440px]">
-          <div className=" flex w-[350px] max-w-[90%] flex-col items-end text-right text-[14px] font-semibold uppercase text-[#e4ded7] sm:w-[350px] sm:text-[14px] md:w-[310px] md:items-start md:text-left md:text-[16px] lg:w-[420px] lg:text-[16px]">
+        <div className="mt-20 flex w-full flex-col items-start justify-center gap-16 sm:mt-32 sm:gap-12 md:mt-40 md:flex-row md:items-start md:justify-between lg:mt-12 lg:max-w-[1440px]">
+          <div className=" flex w-[350px] max-w-[90%] flex-col items-start text-left text-[14px] font-semibold uppercase text-[#e4ded7] sm:w-[350px] sm:text-[14px] md:w-[310px] md:items-start md:text-left md:text-[16px] lg:w-[420px] lg:text-[16px]">
             <AnimatedBody
               text={
                 "Got a question, proposal, project, or want to work together on something?"

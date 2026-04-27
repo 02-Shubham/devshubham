@@ -113,7 +113,7 @@ const Hero = () => {
               src={profile}
               priority
               alt="Shubham's headshot"
-              data-blobity-tooltip="Giga Chad"
+              data-blobity-tooltip="Hire me!!"
               data-blobity-invert="false"
               className=" w-[150px] rounded-[16px] grayscale hover:grayscale-0 md:w-[200px] md:rounded-[32px] lg:w-[245px]"
             />
@@ -122,9 +122,7 @@ const Hero = () => {
       </div>
 
       <div
-        className="absolute bottom-10 flex items-center 
-      justify-center
-      md:bottom-10 lg:w-[90%] lg:max-w-[1440px] lg:justify-between"
+        className="absolute bottom-20 flex items-center justify-center md:bottom-30 lg:w-[90%] lg:max-w-[1440px] lg:justify-between"
       >
         <motion.div
           className="  max-w-[350px] md:max-w-[400px] lg:max-w-[400px]"
@@ -140,7 +138,7 @@ const Hero = () => {
           variants={bodyAnimation}
         >
           <p className="text-right text-[16px] font-semibold text-[#e4ded7] md:text-[20px]">
-            I love building innovative projects that make an impact.
+            Aspiring product-focused engineer building scalable, meaningful technology.
           </p>
         </motion.div>
       </div>

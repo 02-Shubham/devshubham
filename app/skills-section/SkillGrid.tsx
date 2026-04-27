@@ -9,7 +9,7 @@ const SkillGrid = () => {
     },
     {
       category: "UI Libraries",
-      techs: ["Tailwind CSS", "Framer Motion", "GSAP", "Aceternity UI", "Shadcn", "Material UI", "Chart.js"],
+      techs: ["Tailwind CSS", "Framer Motion", "GSAP", "Aceternity UI", "ShadCN", "Material UI", "Chart.js"],
     },
     {
       category: "Backend",
@@ -64,7 +64,7 @@ const SkillGrid = () => {
             {skillGroup.techs.map((tech, techIndex) => (
               <span
                 key={techIndex}
-                className="rounded-md border border-dashed border-[#e4ded7]/30 bg-[#0E1016] px-3 py-1 text-[14px] font-medium text-[#e4ded7]/70"
+                className="rounded-md border border-dashed border-[#e4ded7]/30 bg-[#0E1016] px-3 py-1 text-[14px] font-medium text-white"
               >
                 {tech}
               </span>
