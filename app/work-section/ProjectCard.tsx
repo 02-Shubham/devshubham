@@ -37,28 +37,14 @@ const ProjectCard = ({
   const isEven = id % 2 === 0;
 
   return (
-    <div id={`project-${id}`} ref={container} className="h-screen flex w-full items-start justify-center pt-[10vh] sticky top-0">
+    <div id={`project-${id}`} ref={container} className="h-screen flex w-full items-start justify-center pt-[15vh] pb-[5vh] sticky top-0">
       <motion.div
         style={{
           scale,
-          top: `calc(${i * 40}px)`,
+          top: `calc(${i * 10}px)`, // A minimal 10px stack offset for a slight 3D deck feeling
         }}
-        className={`relative flex flex-col w-full overflow-hidden rounded-t-[2rem] rounded-b-[2rem] bg-[#161822] border-t border-x border-[#ffffff10] origin-top shadow-[0_-10px_30px_rgba(0,0,0,0.8)]`}
+        className={`relative flex flex-col w-full overflow-hidden rounded-[2rem] bg-[#161822] border border-[#ffffff10] origin-top shadow-[0_-10px_30px_rgba(0,0,0,0.8)]`}
       >
-        {/* Sleek Tab Header perfectly matching the reference */}
-        <a 
-          href={`#project-${id}`}
-          className="h-[40px] w-full flex items-center justify-center bg-[#1B1D28] hover:bg-[#202330] transition-colors z-30 cursor-pointer border-b border-[#0E1016]/50"
-          onClick={(e) => {
-             e.preventDefault();
-             document.getElementById(`project-${id}`)?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          <span className="text-[#8e8e93] font-bold tracking-[0.25em] uppercase text-[10px] sm:text-[11px]">
-            {name}
-          </span>
-        </a>
-
         {/* Content Section */}
         <div className={`relative flex flex-col lg:flex-row ${
           isEven ? "lg:flex-row-reverse" : ""
