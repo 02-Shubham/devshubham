@@ -1,42 +1,31 @@
+"use client";
+import { useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { devProjects, ProjectProps } from "./projectDetails";
 import AnimatedTitle from "../animations/AnimatedTitle";
-import { useState } from "react";
+import { useScroll } from "framer-motion";
 
 const ProjectGrid = () => {
-  // const [filter, setFilter] = useState(true);
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
 
   return (
-    <>
-      {/* <div className="mb-10 flex gap-16 text-[#e4ded7] md:mb-16  lg:mb-20 ">
-        <h4
-          className={`text-[16px] md:text-[20px] lg:text-[24px] ${
-            filter ? "text-[#e4ded7]" : "text-[#e4ded7]/30"
-          }`}
-          onClick={() => setFilter(true)}
-        >
-          Development
-        </h4>{" "}
-        <h4
-          className={`text-[16px] md:text-[20px] lg:text-[24px] ${
-            filter ? "text-[#e4ded7]/30" : "text-[#e4ded7]"
-          }`}
-          onClick={() => setFilter(false)}
-        >
-          Design
-        </h4>
-      </div> */}
-
-      {/* {filter ? ( */}
+    <div ref={container} className="relative w-full">
       <AnimatedTitle
         text={"Projects"}
-        className={ "m-10 text-left bg-[#0E1016] text-[40px] font-bold leading-[0.9em] tracking-tighter text-[#e4ded7] sm:text-[45px] md:mb-16 md:text-[60px] lg:text-[80px]"}
+        className={
+          "m-10  bg-[#0E1016] w-full flex justify-center text-center text-[40px] font-bold text-[#e4ded7] leading-[0.9em] tracking-tighter sm:text-[45px] md:mb-16 md:text-[60px] lg:text-[80px]"
+        }
         wordSpace={"mr-[14px]"}
         charSpace={"mr-[0.001em]"}
       />
-        <div className="grid w-[90%] grid-cols-1 grid-rows-2 gap-y-10 gap-x-6 lg:max-w-[1200px] lg:grid-cols-1">
-        
-          {devProjects.map((project: ProjectProps) => (
+      <div className="flex flex-col w-[90%] gap-y-10 lg:max-w-[1200px] mx-auto pb-[10vh]">
+        {devProjects.map((project: ProjectProps, i: number) => {
+          const targetScale = 1 - (devProjects.length - i) * 0.05;
+          return (
             <ProjectCard
               id={project.id}
               key={project.id}
@@ -47,28 +36,15 @@ const ProjectGrid = () => {
               demo={project.demo}
               image={project.image}
               available={project.available}
+              i={i}
+              progress={scrollYProgress}
+              range={[i * (1 / devProjects.length), 1]}
+              targetScale={targetScale}
             />
-          ))}
-        </div>
-      {/* ) : (
-        <div className="grid w-[90%] grid-cols-1 grid-rows-2 gap-y-6 gap-x-6 lg:max-w-[1200px] lg:grid-cols-1">
-          {designProjects.map((project: ProjectProps) => (
-            <ProjectCard
-              id={project.id}
-              key={project.id}
-              name={project.name}
-              description={project.description}
-              technologies={project.technologies}
-              github={project.github}
-              demo={project.demo}
-              image={project.image}
-              bgColor={project.bgColor}
-              available={project.available}
-            />
-          ))}
-        </div>
-      )} */}
-    </>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
