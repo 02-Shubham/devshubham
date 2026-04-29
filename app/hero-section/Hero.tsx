@@ -129,7 +129,7 @@ const Hero = () => {
           variants={bodyAnimation}
         >
           <p className="z-50 text-center text-[16px] font-medium text-[#e4ded7] md:text-[20px] lg:text-left">
-            Student and Frontend Developer
+            Student and FullStack Developer
           </p>
         </motion.div>
 
