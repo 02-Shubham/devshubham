@@ -41,9 +41,9 @@ const ProjectCard = ({
       <motion.div
         style={{
           scale,
-          top: `calc(${i * 10}px)`, // A minimal 10px stack offset for a slight 3D deck feeling
+          top: `calc(${i * 20}px)`, // Slightly more offset for better visibility in light mode
         }}
-        className={`relative flex flex-col w-full overflow-hidden rounded-[2rem] bg-[#161822] border border-[#ffffff10] origin-top shadow-[0_-10px_30px_rgba(0,0,0,0.8)]`}
+        className={`relative flex flex-col w-full overflow-hidden rounded-[2rem] bg-white border border-black/5 origin-top shadow-[0_20px_50px_rgba(0,0,0,0.05)]`}
       >
         {/* Content Section */}
         <div className={`relative flex flex-col lg:flex-row ${
@@ -64,14 +64,14 @@ const ProjectCard = ({
               <AnimatedTitle
                 text={name}
                 className={
-                  "text-[32px] font-bold leading-tight text-[#e4ded7] md:text-[40px] lg:text-[48px]"
+                  "text-[32px] font-bold leading-tight text-[#000000] md:text-[40px] lg:text-[48px]"
                 }
                 wordSpace={"mr-[0.2em]"}
                 charSpace={"mr-[0.01em]"}
               />
               <AnimatedBody
                 text={description}
-                className={"mt-4 text-[16px] leading-relaxed font-medium text-[#95979D] max-w-md"}
+                className={"mt-4 text-[16px] leading-relaxed font-semibold text-[#2d2d2d] max-w-md"}
               />
             </div>
 
@@ -79,7 +79,7 @@ const ProjectCard = ({
               {technologies.map((tech, idx) => (
                 <span
                   key={idx}
-                  className="px-4 py-1.5 text-[12px] md:text-[13px] font-semibold tracking-wide text-[#d1d1d6] bg-[#222532] border border-[#ffffff15] rounded-full hover:bg-[#2A2D3D] transition-all cursor-default shadow-sm backdrop-blur-sm"
+                  className="px-4 py-1.5 text-[12px] md:text-[13px] font-bold tracking-wide text-[#000000] bg-[#e8e8e3] border border-black/10 rounded-full hover:bg-white transition-all cursor-default shadow-sm"
                 >
                   {tech}
                 </span>
@@ -92,7 +92,7 @@ const ProjectCard = ({
                   <Link
                     href={github}
                     target="_blank"
-                    className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#1A1C29] border border-[#ffffff15] text-[#e4ded7] hover:bg-white hover:text-black transition-all duration-300 overflow-hidden shadow-lg shrink-0"
+                    className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#f0f0eb] border border-black/5 text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all duration-300 overflow-hidden shadow-md shrink-0"
                     aria-label="Open GitHub Repository"
                   >
                     <FontAwesomeIcon icon={faGithub} className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-300" />
@@ -100,7 +100,7 @@ const ProjectCard = ({
                   <Link
                     href={demo}
                     target="_blank"
-                    className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#1A1C29] border border-[#ffffff15] text-[#e4ded7] hover:bg-white hover:text-black transition-all duration-300 overflow-hidden shadow-lg shrink-0"
+                    className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#f0f0eb] border border-black/5 text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all duration-300 overflow-hidden shadow-md shrink-0"
                     aria-label="Open Live Demo"
                   >
                     <FontAwesomeIcon icon={faLink} className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-300" />
@@ -111,12 +111,12 @@ const ProjectCard = ({
                   <Link
                     href={github}
                     target="_blank"
-                    className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#1A1C29] border border-[#ffffff15] text-[#e4ded7] hover:bg-white hover:text-black transition-all duration-300 shadow-lg shrink-0"
+                    className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#f0f0eb] border border-black/5 text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all duration-300 shadow-md shrink-0"
                     aria-label="Open GitHub Repository"
                   >
                     <FontAwesomeIcon icon={faGithub} className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-300" />
                   </Link>
-                  <span className="px-5 py-2.5 rounded-full bg-[#1A1C29]/50 border border-[#ffffff15] text-sm font-medium text-white/40 cursor-not-allowed shadow-inner backdrop-blur-sm">
+                  <span className="px-5 py-2.5 rounded-full bg-[#f0f0eb]/50 border border-black/5 text-sm font-medium text-black/40 cursor-not-allowed shadow-inner backdrop-blur-sm">
                     Coming soon
                   </span>
                 </div>
@@ -127,7 +127,7 @@ const ProjectCard = ({
           {/* Image Section */}
           <div className="w-full lg:w-[50%] h-[300px] lg:h-[80%] relative rounded-2xl overflow-hidden group mt-2 lg:mt-0 shadow-2xl shrink-0">
             {/* Decorative container background */}
-            <div className="absolute inset-0 bg-[#0E1016] rounded-2xl border border-white/5"></div>
+            <div className="absolute inset-0 bg-[#f8f8f4] rounded-2xl border border-black/5"></div>
             
             <motion.div 
               className="w-full h-full relative" 

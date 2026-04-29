@@ -56,7 +56,7 @@ const AnimatedWords2: React.FC<AnimatedWords2Props> = ({ title, style }) => {
             }}
           >
             <motion.span
-              className="-mb-4 inline-block overflow-hidden pt-1 sm:-mb-2 md:-mb-3 lg:-mb-4"
+              className="mb-4 inline-block overflow-hidden pt-1 sm:mb-2 md:mb-3 lg:mb-4"
               variants={wordAnimation2}
             >
               {word + "\u00A0"}

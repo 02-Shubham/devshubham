@@ -40,7 +40,7 @@ export default function Home() {
       <NavBar />
 
       {/* <ScrollerMotion> */}
-      <main className="flex flex-col items-center justify-center">
+      <main className="flex flex-col w-full">
         <Hero />
         <Work />
         <About />

@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply bg-[#0E1016] text-[#e4ded7];
+  }
   h1 {
     @apply text-4xl;
     @apply font-bold;
@@ -29,13 +32,14 @@
   }
 }
 
-html,
-body {
-  overscroll-behavior: none;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  overflow-y: hidden;
+  overscroll-behavior: none;
+  overflow-x: clip;
+  overflow-y: auto;
 }
 @layer utilities {
   @property --border-angle {

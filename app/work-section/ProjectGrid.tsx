@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { devProjects, ProjectProps } from "./projectDetails";
-import AnimatedTitle from "../animations/AnimatedTitle";
+import AnimatedWords2 from "../animations/AnimatedWords2";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 
 const ProjectGrid = () => {
@@ -25,18 +25,16 @@ const ProjectGrid = () => {
 
   return (
     <div ref={container} className="relative w-full">
-      <AnimatedTitle
-        text={"Projects"}
-        className={
-          "m-10  bg-[#0E1016] w-full flex justify-center text-center text-[40px] font-bold text-[#e4ded7] leading-[0.9em] tracking-tighter sm:text-[45px] md:mb-16 md:text-[60px] lg:text-[80px]"
-        }
-        wordSpace={"mr-[14px]"}
-        charSpace={"mr-[0.001em]"}
-      />
+      <div className="relative z-20 pt-20 pb-10 flex justify-center">
+        <AnimatedWords2
+          title={"Projects"}
+          style={`flex max-w-[500px] flex-col items-center text-center font-extrabold uppercase leading-[0.9em] text-[#000000] sm:max-w-full sm:flex-row sm:justify-center text-[clamp(50px,10vw,80px)]`}
+        />
+      </div>
       
       {/* Global Sticky Navigation Tab Header */}
       <div className="sticky top-4 z-50 w-full flex justify-center px-4 mb-10 overflow-hidden pointer-events-none">
-        <div className=" mt-10 flex items-center gap-1 sm:gap-2 p-1.5 sm:p-2 bg-[#161822]/90 backdrop-blur-md border border-[#ffffff10] rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.8)] overflow-x-auto no-scrollbar pointer-events-auto max-w-full">
+        <div className="flex items-center gap-1 sm:gap-2 p-1.5 sm:p-2 bg-white/80 backdrop-blur-md border border-black/5 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.05)] overflow-x-auto no-scrollbar pointer-events-auto max-w-full">
           <style jsx>{`
             .no-scrollbar::-webkit-scrollbar {
               display: none;
@@ -48,8 +46,8 @@ const ProjectGrid = () => {
               href={`#project-${project.id}`}
               className={`px-3 py-1.5 sm:px-4 sm:py-2 flex-shrink-0 rounded-full text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 ${
                 activeIndex === i 
-                  ? "bg-[#2A2D3D] text-white shadow-md border-b-[2px] border-white/20" 
-                  : "bg-transparent text-[#8e8e93] hover:text-[#d1d1d6] hover:bg-[#1B1D28]"
+                  ? "bg-[#1a1a1a] text-white shadow-md border-b-[2px] border-black/20" 
+                  : "bg-transparent text-[#666666] hover:text-[#1a1a1a] hover:bg-black/5"
               }`}
               onClick={(e) => {
                  e.preventDefault();

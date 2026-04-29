@@ -25,7 +25,7 @@ const Hero = () => {
   };
   return (
     <motion.section
-      className="relative z-10 flex min-h-screen w-full items-stretch justify-center bg-[url('.//../public/hero.jpg')] bg-cover  bg-center py-0 sm:h-[90vh]  md:h-[100vh] 3xl:h-[85vh]"
+      className="sticky top-0 z-0 flex min-h-screen w-full items-stretch justify-center bg-[url('.//../public/hero.jpg')] bg-cover bg-center py-0 sm:h-[90vh] md:h-[100vh] 3xl:h-[85vh]"
       id="home"
       initial="initial"
       animate="animate"
@@ -41,7 +41,7 @@ const Hero = () => {
             aria-label="Scroll to Contact Section"
           >
             <motion.button
-              className="hidden rounded-md border-2 border-[#e4ded7] py-2 px-4 text-[14px] font-semibold text-[#e4ded7] sm:block  md:text-[16px] lg:block"
+              className="hidden rounded-md border-2 border-[#e4ded7] py-2 px-4 text-[14px] font-semibold text-[#e4ded7] sm:block  md:text-[16px] lg:block hover:bg-[#e4ded7] hover:text-[#0E1016] transition-all duration-300"
               variants={bodyAnimation}
             >
               Let&apos;s Talk
