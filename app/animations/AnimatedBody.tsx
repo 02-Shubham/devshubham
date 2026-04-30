@@ -28,9 +28,6 @@ export default function AnimatedBody({
     if (inView) {
       ctrls.start("visible");
     }
-    if (!inView) {
-      ctrls.start("hidden");
-    }
   }, [ctrls, inView]);
 
   const wordAnimation = {
@@ -40,8 +37,8 @@ export default function AnimatedBody({
 
   const bodyAnimation = {
     hidden: {
-      opacity: 0,
-      y: `1em`,
+      opacity: 0.1,
+      y: `10px`,
     },
     visible: {
       opacity: 1,

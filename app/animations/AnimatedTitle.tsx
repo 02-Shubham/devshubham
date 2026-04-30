@@ -29,9 +29,6 @@ export default function AnimatedTitle({
     if (inView) {
       ctrls.start("visible");
     }
-    if (!inView) {
-      ctrls.start("hidden");
-    }
   }, [ctrls, inView]);
 
   const wordAnimation = {
@@ -41,8 +38,8 @@ export default function AnimatedTitle({
 
   const characterAnimation = {
     hidden: {
-      opacity: 0,
-      y: `0.25em`,
+      opacity: 0.1,
+      y: `10px`,
     },
     visible: {
       opacity: 1,

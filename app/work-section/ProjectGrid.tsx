@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import { devProjects, ProjectProps } from "./projectDetails";
 import AnimatedWords2 from "../animations/AnimatedWords2";
@@ -13,6 +13,16 @@ const ProjectGrid = () => {
   });
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     let index = Math.floor(latest * devProjects.length);
@@ -25,11 +35,17 @@ const ProjectGrid = () => {
 
   return (
     <div ref={container} className="relative w-full">
-      <div className="relative z-20 pt-20 pb-10 flex justify-center">
-        <AnimatedWords2
-          title={"Projects"}
-          style={`flex max-w-[500px] flex-col items-center text-center font-extrabold uppercase leading-[0.9em] text-[#000000] sm:max-w-full sm:flex-row sm:justify-center text-[clamp(50px,10vw,80px)]`}
-        />
+      <div className="relative z-20 pt-10 pb-10 flex justify-center px-4">
+        {isMobile ? (
+          <h2 className="text-center font-extrabold uppercase leading-[0.9em] text-[#000000] text-[40px]">
+            Projects
+          </h2>
+        ) : (
+          <AnimatedWords2
+            title={"Projects"}
+            style={`flex flex-col items-center text-center font-extrabold uppercase leading-[0.9em] text-[#000000] sm:max-w-full sm:flex-row sm:justify-center text-[clamp(40px,10vw,80px)]`}
+          />
+        )}
       </div>
       
       {/* Global Sticky Navigation Tab Header */}

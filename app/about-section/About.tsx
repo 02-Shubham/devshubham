@@ -47,8 +47,9 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="mt-10 flex flex-col md:-mt-0 lg:mt-28">
-        </div>
+        {/* <div className="mt-10 flex flex-col md:-mt-0 lg:mt-28 overflow-hidden w-full relative h-[150px]">
+          <SongCarousel />
+        </div> */}
       </div>
     </section>
   );

@@ -38,8 +38,6 @@ html {
 
 body {
   overscroll-behavior: none;
-  overflow-x: clip;
-  overflow-y: auto;
 }
 @layer utilities {
   @property --border-angle {

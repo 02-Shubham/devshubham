@@ -8,7 +8,7 @@ import Image from "next/image";
 import AnimatedTitle from "../animations/AnimatedTitle";
 import AnimatedBody from "../animations/AnimatedBody";
 import { motion, useTransform, MotionValue } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 interface ExtendedProjectProps extends ProjectProps {
   i: number;
@@ -32,23 +32,34 @@ const ProjectCard = ({
   targetScale,
 }: ExtendedProjectProps) => {
   const container = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const scale = useTransform(progress, range, [1, targetScale]);
   
   const isEven = id % 2 === 0;
 
   return (
-    <div id={`project-${id}`} ref={container} className="h-screen flex w-full items-start justify-center pt-[15vh] pb-[5vh] sticky top-0">
+    <div id={`project-${id}`} ref={container} className="h-auto sm:h-screen flex w-full items-start justify-center pt-10 sm:pt-[15vh] pb-[5vh] relative sm:sticky top-0 sm:top-[10vh] px-2 sm:px-0" style={{ zIndex: isMobile ? 1 : i + 1 }}>
       <motion.div
         style={{
-          scale,
-          top: `calc(${i * 20}px)`, // Slightly more offset for better visibility in light mode
+          scale: isMobile ? 1 : scale,
+          top: isMobile ? 0 : `calc(${i * 20}px)`, 
         }}
-        className={`relative flex flex-col w-full overflow-hidden rounded-[2rem] bg-white border border-black/5 origin-top shadow-[0_20px_50px_rgba(0,0,0,0.05)]`}
+        className={`relative flex flex-col w-full overflow-hidden rounded-[2rem] bg-white border border-black/5 origin-top shadow-[0_40px_100px_rgba(0,0,0,0.15)]`}
       >
         {/* Content Section */}
         <div className={`relative flex flex-col lg:flex-row ${
           isEven ? "lg:flex-row-reverse" : ""
-        } h-[750px] lg:h-[650px] w-full p-6 sm:p-10 lg:p-12 items-center justify-between`}
+        } min-h-[500px] h-auto sm:h-[750px] lg:h-[650px] w-full p-6 sm:p-10 lg:p-12 items-center justify-between`}
         >
           {/* Subtle background glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff03] to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -61,18 +72,30 @@ const ProjectCard = ({
               }
             `}</style>
             <div>
-              <AnimatedTitle
-                text={name}
-                className={
-                  "text-[32px] font-bold leading-tight text-[#000000] md:text-[40px] lg:text-[48px]"
-                }
-                wordSpace={"mr-[0.2em]"}
-                charSpace={"mr-[0.01em]"}
-              />
-              <AnimatedBody
-                text={description}
-                className={"mt-4 text-[16px] leading-relaxed font-semibold text-[#2d2d2d] max-w-md"}
-              />
+              {isMobile ? (
+                <h3 className="text-[32px] font-bold leading-tight text-[#000000]">
+                  {name}
+                </h3>
+              ) : (
+                <AnimatedTitle
+                  text={name}
+                  className={
+                    "text-[32px] font-bold leading-tight text-[#000000] md:text-[40px] lg:text-[48px]"
+                  }
+                  wordSpace={"mr-[0.2em]"}
+                  charSpace={"mr-[0.01em]"}
+                />
+              )}
+              {isMobile ? (
+                <p className="mt-4 text-[16px] leading-relaxed font-bold text-[#2d2d2d] max-w-md">
+                  {description}
+                </p>
+              ) : (
+                <AnimatedBody
+                  text={description}
+                  className={"mt-4 text-[16px] leading-relaxed font-semibold text-[#2d2d2d] max-w-md"}
+                />
+              )}
             </div>
 
             <div className="flex flex-wrap gap-2 mt-2">
@@ -125,7 +148,7 @@ const ProjectCard = ({
           </div>
 
           {/* Image Section */}
-          <div className="w-full lg:w-[50%] h-[300px] lg:h-[80%] relative rounded-2xl overflow-hidden group mt-2 lg:mt-0 shadow-2xl shrink-0">
+          <div className="w-full lg:w-[50%] h-[200px] sm:h-[300px] lg:h-[80%] relative rounded-2xl overflow-hidden group mt-2 lg:mt-0 shadow-2xl shrink-0">
             {/* Decorative container background */}
             <div className="absolute inset-0 bg-[#f8f8f4] rounded-2xl border border-black/5"></div>
             

@@ -12,7 +12,7 @@ const AnimatedWords2: React.FC<AnimatedWords2Props> = ({ title, style }) => {
   const ctrls = useAnimation();
 
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.1,
     triggerOnce: true,
   });
 
@@ -20,15 +20,12 @@ const AnimatedWords2: React.FC<AnimatedWords2Props> = ({ title, style }) => {
     if (inView) {
       ctrls.start("animate");
     }
-    if (!inView) {
-      ctrls.start("initial");
-    }
   }, [ctrls, inView]);
 
   const wordAnimation2 = {
     initial: {
-      opacity: 0,
-      y: 150,
+      opacity: 0.1,
+      y: 20,
     },
     animate: {
       opacity: 1,
@@ -49,7 +46,7 @@ const AnimatedWords2: React.FC<AnimatedWords2Props> = ({ title, style }) => {
             key={index}
             initial="initial"
             animate={ctrls}
-            className="flex items-center justify-center overflow-hidden last:-mr-10 pb-2 sm:pb-0"
+            className="flex items-center justify-center overflow-hidden pb-2 sm:pb-0"
             transition={{
               delayChildren: index * 0.25,
               staggerChildren: 0.05,

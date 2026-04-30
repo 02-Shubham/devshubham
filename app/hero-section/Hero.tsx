@@ -25,14 +25,14 @@ const Hero = () => {
   };
   return (
     <motion.section
-      className="sticky top-0 z-0 flex min-h-screen w-full items-stretch justify-center bg-[url('.//../public/hero.jpg')] bg-cover bg-center py-0 sm:h-[90vh] md:h-[100vh] 3xl:h-[85vh]"
+      className="sticky top-0 z-0 flex min-h-screen w-full items-stretch justify-center bg-[url('.//../public/hero.jpg')] bg-cover bg-center py-0 sm:h-[90vh] md:h-[100vh] 3xl:h-[85vh] overflow-x-clip"
       id="home"
       initial="initial"
       animate="animate"
     >
       <motion.div className="absolute left-0 top-0 right-0 bottom-0 h-full w-full bg-[#0E1016] mix-blend-color"></motion.div>
 
-      <div className="absolute top-10 flex justify-between sm:w-[90%] lg:max-w-[1440px]">
+      <div className="absolute top-10 flex w-full justify-between px-6 sm:w-[90%] lg:max-w-[1440px]">
         <div>
           <Link
             href="#contact"
@@ -103,7 +103,7 @@ const Hero = () => {
         >
           <AnimatedWords
             title="SHUBHAM SAHU"
-            style="inline-block overflow-hidden pt-1 -mr-4 sm:-mr-5 md:-mr-7 lg:-mr-9 -mb-1 sm:-mb-2 md:-mb-3 lg:-mb-4"
+            style="inline-block overflow-hidden pt-1 -mb-1 sm:-mb-2 md:-mb-3 lg:-mb-4"
           />
           <motion.div
             className="absolute bottom-[-170px] mx-auto sm:bottom-[-160px] md:bottom-[-180px] lg:bottom-[-210px]"
