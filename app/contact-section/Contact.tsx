@@ -13,6 +13,7 @@ import { faGithub, faInstagram, faLinkedin, faTwitter } from "@fortawesome/free-
 import heartIcon from "../../public/heart icon.png";
 
 const Contact = () => {
+   const year = new Date().getFullYear();
   return (
     <motion.section
       className="relative z-10 flex h-[95vh] w-full items-center justify-center overflow-hidden bg-[#0E1016] bg-cover bg-center py-16 md:h-[80vh] md:py-20 lg:h-[90vh] lg:pt-0 lg:pb-28 3xl:h-[75vh]"
@@ -58,7 +59,7 @@ const Contact = () => {
               >
                 <AnimatedBody
                   text={"Send me an email"}
-                  className={"bor der w-[190px] pr-[40px] md:w-[170px] md:pr-0"}
+                  className={"border w-[190px] pr-[40px] md:w-[170px] md:pr-0"}
                 />
               </Link>
             </div>

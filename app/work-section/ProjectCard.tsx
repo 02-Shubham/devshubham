@@ -9,6 +9,43 @@ import AnimatedTitle from "../animations/AnimatedTitle";
 import AnimatedBody from "../animations/AnimatedBody";
 import { motion, useTransform, MotionValue } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { 
+  SiJavascript, SiReact, SiNextdotjs, SiTypescript, SiRedux, SiHtml5, SiCss, SiFirebase,
+  SiTailwindcss, SiFramer, SiNodedotjs, SiExpress, SiMongodb, SiGit, SiGithub,SiPython,
+  SiVercel, SiPostman, SiLinux, SiGreensock, SiMui, SiChartdotjs, SiDocker, SiPrisma, SiPostgresql, SiSupabase, SiClerk, SiZod, SiTrpc, SiOpenai
+} from "react-icons/si";
+
+const getIcon = (tech: string) => {
+  const t = tech.toLowerCase();
+  if (t.includes("react")) return <SiReact className="text-[#61DAFB]" />;
+  if (t.includes("python")) return <SiPython  />;
+  if (t.includes("next.js")) return <SiNextdotjs className="text-black" />;
+  if (t.includes("typescript")) return <SiTypescript className="text-[#3178C6]" />;
+  if (t.includes("redux")) return <SiRedux className="text-[#764ABC]" /> ;
+  if (t.includes("html5")) return <SiHtml5 className="text-[#E34F26]" />;
+  if (t.includes("css3") || t.includes("css")) return <SiCss className="text-[#1572B6]" />;
+  if (t.includes("firebase")) return <SiFirebase className="text-[#FFCA28]" />;
+  if (t.includes("tailwind")) return <SiTailwindcss className="text-[#06B6D4]" />;
+  if (t.includes("framer")) return <SiFramer className="text-black" />;
+  if (t.includes("gsap")) return <SiGreensock className="text-[#88CE02]" />;
+  if (t.includes("node.js")) return <SiNodedotjs className="text-[#339933]" />;
+  if (t.includes("express")) return <SiExpress className="text-black" />;
+  if (t.includes("mongodb")) return <SiMongodb className="text-[#47A248]" />;
+  if (t.includes("git") && !t.includes("github")) return <SiGit className="text-[#F05032]" />;
+  if (t.includes("github")) return <SiGithub className="text-black" />;
+  if (t.includes("vercel")) return <SiVercel className="text-black" />;
+  if (t.includes("postman")) return <SiPostman className="text-[#FF6C37]" />;
+  if (t.includes("linux")) return <SiLinux className="text-black" />;
+  if (t.includes("docker") || t.includes("devops")) return <SiDocker className="text-[#2496ED]" />;
+  if (t.includes("prisma")) return <SiPrisma className="text-black" />;
+  if (t.includes("postgresql")) return <SiPostgresql className="text-[#336791]" />;
+  if (t.includes("supabase")) return <SiSupabase className="text-[#3ECF8E]" />;
+  if (t.includes("clerk")) return <SiClerk className="text-[#6C47FF]" />;
+  if (t.includes("zod")) return <SiZod className="text-[#3068B7]" />;
+  if (t.includes("trpc")) return <SiTrpc className="text-[#2596BE]" />;
+  if (t.includes("openai")) return <SiOpenai className="text-black" />;
+  return null;
+};
 
 interface ExtendedProjectProps extends ProjectProps {
   i: number;
@@ -59,7 +96,7 @@ const ProjectCard = ({
         {/* Content Section */}
         <div className={`relative flex flex-col lg:flex-row ${
           isEven ? "lg:flex-row-reverse" : ""
-        } min-h-[500px] h-auto sm:h-[750px] lg:h-[650px] w-full p-6 sm:p-10 lg:p-12 items-center justify-between`}
+        } min-h-[500px] h-auto sm:h-[750px] lg:h-[650px] w-full px-6 sm:px-10 lg:px-12 py-3 sm:py-5 lg:py-3 items-center justify-between`}
         >
           {/* Subtle background glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff03] to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -100,12 +137,13 @@ const ProjectCard = ({
 
             <div className="flex flex-wrap gap-2 mt-2">
               {technologies.map((tech, idx) => (
-                <span
+                <div
                   key={idx}
-                  className="px-4 py-1.5 text-[12px] md:text-[13px] font-bold tracking-wide text-[#000000] bg-[#e8e8e3] border border-black/10 rounded-full hover:bg-white transition-all cursor-default shadow-sm"
+                  className="flex items-center gap-1 rounded-md border border-dashed border-black/20 bg-white/50 px-2 py-1 text-[14px] font-semibold text-black transition-all hover:bg-white cursor-default shadow-sm"
                 >
-                  {tech}
-                </span>
+                  <span className="text-lg pr-1">{getIcon(tech)}</span>
+                  <span>{tech}</span>
+                </div>
               ))}
             </div>
 

@@ -37,7 +37,7 @@ const ProjectGrid = () => {
     <div ref={container} className="relative w-full">
       <div className="relative z-20 pt-10 pb-10 flex justify-center px-4">
         {isMobile ? (
-          <h2 className="text-center font-extrabold uppercase leading-[0.9em] text-[#000000] text-[40px]">
+          <h2 className="text-center font-extrabold uppercase leading-[0.9em] text-[#000000] text-[30px]">
             Projects
           </h2>
         ) : (
