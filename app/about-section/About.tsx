@@ -49,7 +49,7 @@ const About = () => {
 
           <div className="relative mb-16 h-[400px] w-full overflow-hidden rounded-3xl border-2 border-[#e4ded7]/10 lg:h-[500px] lg:w-[40%]">
             <Image
-              src="/about.png"
+              src="/About.png"
               alt="Shubham Sahu"
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
