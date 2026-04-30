@@ -42,8 +42,8 @@ export default function Home() {
       {/* <ScrollerMotion> */}
       <main className="flex flex-col w-full">
         <Hero />
-        <Work />
         <About />
+        <Work />
         <Skills />
         <Contact />
         <Footer />

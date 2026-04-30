@@ -25,7 +25,7 @@ const Hero = () => {
   };
   return (
     <motion.section
-      className="sticky top-0 z-0 flex min-h-screen w-full items-stretch justify-center bg-[url('.//../public/hero.jpg')] bg-cover bg-center py-0 sm:h-[90vh] md:h-[100vh] 3xl:h-[85vh] overflow-x-clip"
+      className="relative z-10 flex min-h-screen w-full items-stretch justify-center bg-[url('.//../public/hero.jpg')] bg-cover bg-center py-0 sm:h-[90vh] md:h-[100vh] 3xl:h-[85vh] overflow-x-clip"
       id="home"
       initial="initial"
       animate="animate"

@@ -4,8 +4,6 @@ import {
   SiTailwindcss, SiFramer, SiNodedotjs, SiExpress, SiMongodb, SiGit, SiGithub,
   SiVercel, SiPostman, SiLinux, SiGreensock, SiMui, SiChartdotjs, SiDocker
 } from "react-icons/si";
-import { bodyAnimation } from "../animations/animations";
-import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const SkillGrid = () => {
   const skills = [
