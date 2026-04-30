@@ -10,44 +10,44 @@ const SkillGrid = () => {
     {
       category: "Frontend",
       techs: [
-        { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" /> },
-        { name: "React", icon: <SiReact className="text-[#61DAFB]" /> },
-        { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-        { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
-        { name: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
-        { name: "HTML5", icon: <SiHtml5 className="text-[#E34F26]" /> },
-        { name: "CSS3", icon: <SiCss className="text-[#1572B6]" /> },
-        { name: "Firebase", icon: <SiFirebase className="text-[#FFCA28]" /> },
+        { name: "JavaScript", icon: SiJavascript, color: "text-[#F7DF1E]" },
+        { name: "React", icon: SiReact, color: "text-[#61DAFB]" },
+        { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+        { name: "TypeScript", icon: SiTypescript, color: "text-[#3178C6]" },
+        { name: "Redux", icon: SiRedux, color: "text-[#764ABC]" },
+        { name: "HTML5", icon: SiHtml5, color: "text-[#E34F26]" },
+        { name: "CSS3", icon: SiCss, color: "text-[#1572B6]" },
+        { name: "Firebase", icon: SiFirebase, color: "text-[#FFCA28]" },
       ],
     },
     {
       category: "UI Libraries",
       techs: [
-        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4]" /> },
-        { name: "Framer Motion", icon: <SiFramer className="text-white" /> },
-        { name: "GSAP", icon: <SiGreensock className="text-[#88CE02]" /> },
-        { name: "Material UI", icon: <SiMui className="text-[#007FFF]" /> },
-        { name: "Chart.js", icon: <SiChartdotjs className="text-[#FF6384]" /> },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
+        { name: "Framer Motion", icon: SiFramer, color: "text-white" },
+        { name: "GSAP", icon: SiGreensock, color: "text-[#88CE02]" },
+        { name: "Material UI", icon: SiMui, color: "text-[#007FFF]" },
+        { name: "Chart.js", icon: SiChartdotjs, color: "text-[#FF6384]" },
       ],
     },
     {
       category: "Backend",
       techs: [
-        { name: "Node.js", icon: <SiNodedotjs className="text-[#339933]" /> },
-        { name: "Express.js", icon: <SiExpress className="text-white" /> },
-        { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
-        { name: "Firebase", icon: <SiFirebase className="text-[#FFCA28]" /> },
+        { name: "Node.js", icon: SiNodedotjs, color: "text-[#339933]" },
+        { name: "Express.js", icon: SiExpress, color: "text-white" },
+        { name: "MongoDB", icon: SiMongodb, color: "text-[#47A248]" },
+        { name: "Firebase", icon: SiFirebase, color: "text-[#FFCA28]" },
       ],
     },
     {
       category: "Others",
       techs: [
-        { name: "Git", icon: <SiGit className="text-[#F05032]" /> },
-        { name: "GitHub", icon: <SiGithub className="text-white" /> },
-        { name: "Vercel", icon: <SiVercel className="text-white" /> },
-        { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> },
-        { name: "Linux", icon: <SiLinux className="text-white" /> },
-        { name: "DevOps", icon: <SiDocker className="text-[#2496ED]" /> },
+        { name: "Git", icon: SiGit, color: "text-[#F05032]" },
+        { name: "GitHub", icon: SiGithub, color: "text-white" },
+        { name: "Vercel", icon: SiVercel, color: "text-white" },
+        { name: "Postman", icon: SiPostman, color: "text-[#FF6C37]" },
+        { name: "Linux", icon: SiLinux, color: "text-white" },
+        { name: "DevOps", icon: SiDocker, color: "text-[#2496ED]" },
       ],
     },
   ];
@@ -92,20 +92,26 @@ const SkillGrid = () => {
             {skillGroup.category}
           </h3>
           <div className="flex flex-wrap gap-3">
-            {skillGroup.techs.map((tech, techIndex) => (
-              <motion.div
-                key={techIndex}
-                className="flex items-center gap-1 rounded-md border border-dashed border-[#e4ded7]/50 bg-[#161a23] px-2 py-1 text-[14px] font-medium text-white transition-all hover:border-[#e4ded7]/50 hover:bg-[#1e2533] cursor-default shadow-sm"
-              >
-                <span className="text-lg pr-1">{tech.icon}</span>
-                <span>{tech.name}</span>
-              </motion.div>
-            ))}
+            {skillGroup.techs.map((tech, techIndex) => {
+              const Icon = tech.icon as any;
+              return (
+                <motion.div
+                  key={techIndex}
+                  className="flex items-center gap-1 rounded-md border border-dashed border-[#e4ded7]/50 bg-[#161a23] px-2 py-1 text-[14px] font-medium text-white transition-all hover:border-[#e4ded7]/50 hover:bg-[#1e2533] cursor-default shadow-sm"
+                >
+                  <span className="text-lg pr-1">
+                    <Icon className={tech.color} />
+                  </span>
+                  <span>{tech.name}</span>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       ))}
     </motion.div>
   );
+
 };
 
 export default SkillGrid;

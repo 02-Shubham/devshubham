@@ -23,12 +23,12 @@ const Contact = () => {
     >
       <div className="mx-auto flex w-[90%] flex-col items-start justify-center pt-10 md:pt-0">
         <div
-          className={`flex flex-col items-start justify-center ${monaSans.className} relative w-full sm:items-center lg:max-w-[1440px] `}
+          className={`flex flex-col items-center justify-center ${monaSans.className} relative w-full sm:items-center lg:max-w-[1440px] `}
         >
           <AnimatedWords2
             title={"Let's Talk"}
             style={
-              "flex max-w-[400px] flex-col items-start text-left text-[clamp(60px,14vw,100px)] font-extrabold uppercase leading-[0.9em] text-[#e4ded7] sm:max-w-full sm:flex-row sm:items-center sm:justify-center sm:text-center sm:text-[170px] md:text-[200px] lg:text-center lg:text-[270px] xl:text-[390px]"
+              "flex max-w-[400px] flex-col items-center text-center text-[clamp(60px,14vw,100px)] font-extrabold uppercase leading-[0.9em] text-[#e4ded7] sm:max-w-full sm:flex-row sm:items-center sm:justify-center sm:text-center sm:text-[170px] md:text-[200px] lg:text-center lg:text-[270px] xl:text-[390px]"
             }
           />
           <Image
@@ -59,7 +59,7 @@ const Contact = () => {
               >
                 <AnimatedBody
                   text={"Send me an email"}
-                  className={"border w-[190px] pr-[40px] md:w-[170px] md:pr-0"}
+                  className={" w-[190px] pr-[40px] md:w-[170px] md:pr-0"}
                 />
               </Link>
             </div>

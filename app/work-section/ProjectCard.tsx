@@ -9,41 +9,38 @@ import AnimatedTitle from "../animations/AnimatedTitle";
 import AnimatedBody from "../animations/AnimatedBody";
 import { motion, useTransform, MotionValue } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { 
-  SiJavascript, SiReact, SiNextdotjs, SiTypescript, SiRedux, SiHtml5, SiCss, SiFirebase,
-  SiTailwindcss, SiFramer, SiNodedotjs, SiExpress, SiMongodb, SiGit, SiGithub,SiPython,
-  SiVercel, SiPostman, SiLinux, SiGreensock, SiMui, SiChartdotjs, SiDocker, SiPrisma, SiPostgresql, SiSupabase, SiClerk, SiZod, SiTrpc, SiOpenai
-} from "react-icons/si";
+import * as SiIcons from "react-icons/si";
+const Si: any = SiIcons;
 
 const getIcon = (tech: string) => {
   const t = tech.toLowerCase();
-  if (t.includes("react")) return <SiReact className="text-[#61DAFB]" />;
-  if (t.includes("python")) return <SiPython  />;
-  if (t.includes("next.js")) return <SiNextdotjs className="text-black" />;
-  if (t.includes("typescript")) return <SiTypescript className="text-[#3178C6]" />;
-  if (t.includes("redux")) return <SiRedux className="text-[#764ABC]" /> ;
-  if (t.includes("html5")) return <SiHtml5 className="text-[#E34F26]" />;
-  if (t.includes("css3") || t.includes("css")) return <SiCss className="text-[#1572B6]" />;
-  if (t.includes("firebase")) return <SiFirebase className="text-[#FFCA28]" />;
-  if (t.includes("tailwind")) return <SiTailwindcss className="text-[#06B6D4]" />;
-  if (t.includes("framer")) return <SiFramer className="text-black" />;
-  if (t.includes("gsap")) return <SiGreensock className="text-[#88CE02]" />;
-  if (t.includes("node.js")) return <SiNodedotjs className="text-[#339933]" />;
-  if (t.includes("express")) return <SiExpress className="text-black" />;
-  if (t.includes("mongodb")) return <SiMongodb className="text-[#47A248]" />;
-  if (t.includes("git") && !t.includes("github")) return <SiGit className="text-[#F05032]" />;
-  if (t.includes("github")) return <SiGithub className="text-black" />;
-  if (t.includes("vercel")) return <SiVercel className="text-black" />;
-  if (t.includes("postman")) return <SiPostman className="text-[#FF6C37]" />;
-  if (t.includes("linux")) return <SiLinux className="text-black" />;
-  if (t.includes("docker") || t.includes("devops")) return <SiDocker className="text-[#2496ED]" />;
-  if (t.includes("prisma")) return <SiPrisma className="text-black" />;
-  if (t.includes("postgresql")) return <SiPostgresql className="text-[#336791]" />;
-  if (t.includes("supabase")) return <SiSupabase className="text-[#3ECF8E]" />;
-  if (t.includes("clerk")) return <SiClerk className="text-[#6C47FF]" />;
-  if (t.includes("zod")) return <SiZod className="text-[#3068B7]" />;
-  if (t.includes("trpc")) return <SiTrpc className="text-[#2596BE]" />;
-  if (t.includes("openai")) return <SiOpenai className="text-black" />;
+  if (t.includes("react")) return <Si.SiReact className="text-[#61DAFB]" />;
+  if (t.includes("python")) return <Si.SiPython  />;
+  if (t.includes("next.js")) return <Si.SiNextdotjs className="text-black" />;
+  if (t.includes("typescript")) return <Si.SiTypescript className="text-[#3178C6]" />;
+  if (t.includes("redux")) return <Si.SiRedux className="text-[#764ABC]" /> ;
+  if (t.includes("html5")) return <Si.SiHtml5 className="text-[#E34F26]" />;
+  if (t.includes("css3") || t.includes("css")) return <Si.SiCss className="text-[#1572B6]" />;
+  if (t.includes("firebase")) return <Si.SiFirebase className="text-[#FFCA28]" />;
+  if (t.includes("tailwind")) return <Si.SiTailwindcss className="text-[#06B6D4]" />;
+  if (t.includes("framer")) return <Si.SiFramer className="text-black" />;
+  if (t.includes("gsap")) return <Si.SiGreensock className="text-[#88CE02]" />;
+  if (t.includes("node.js")) return <Si.SiNodedotjs className="text-[#339933]" />;
+  if (t.includes("express")) return <Si.SiExpress className="text-black" />;
+  if (t.includes("mongodb")) return <Si.SiMongodb className="text-[#47A248]" />;
+  if (t.includes("git") && !t.includes("github")) return <Si.SiGit className="text-[#F05032]" />;
+  if (t.includes("github")) return <Si.SiGithub className="text-black" />;
+  if (t.includes("vercel")) return <Si.SiVercel className="text-black" />;
+  if (t.includes("postman")) return <Si.SiPostman className="text-[#FF6C37]" />;
+  if (t.includes("linux")) return <Si.SiLinux className="text-black" />;
+  if (t.includes("docker") || t.includes("devops")) return <Si.SiDocker className="text-[#2496ED]" />;
+  if (t.includes("prisma")) return <Si.SiPrisma className="text-black" />;
+  if (t.includes("postgresql")) return <Si.SiPostgresql className="text-[#336791]" />;
+  if (t.includes("supabase")) return <Si.SiSupabase className="text-[#3ECF8E]" />;
+  if (t.includes("clerk")) return <Si.SiClerk className="text-[#6C47FF]" />;
+  if (t.includes("zod")) return <Si.SiZod className="text-[#3068B7]" />;
+  if (t.includes("trpc")) return <Si.SiTrpc className="text-[#2596BE]" />;
+  if (t.includes("openai")) return <Si.SiOpenai className="text-black" />;
   return null;
 };
 
