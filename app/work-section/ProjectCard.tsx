@@ -82,7 +82,7 @@ const ProjectCard = ({
   const isEven = id % 2 === 0;
 
   return (
-    <div id={`project-${id}`} ref={container} className="h-auto sm:h-screen flex w-full items-start justify-center pt-10 sm:pt-[15vh] pb-[5vh] relative sm:sticky top-0 sm:top-[10vh] px-2 sm:px-0" style={{ zIndex: isMobile ? 1 : i + 1 }}>
+    <div id={`project-${id}`} ref={container} className="h-auto sm:h-screen flex w-full items-start justify-center pt-4 sm:pt-[5vh] pb-[5vh] relative sm:sticky top-0 sm:top-[5vh] px-2 sm:px-0" style={{ zIndex: isMobile ? 1 : i + 1 }}>
       <motion.div
         style={{
           scale: isMobile ? 1 : scale,

@@ -60,6 +60,6 @@ body {
       linear-gradient(45deg, #080b11, #1e293b 50%, #172033) padding-box,
       conic-gradient(from var(--border-angle), rgba(71, 85, 105, 0.48) 80%, #6366f1 86%, #a5b4fc 90%, #6366f1 94%, rgba(71, 85, 105, 0.48)) border-box;
     border: 1.5px solid transparent;
-    animation: border-rotate 4s linear infinite;
+    /* animation: border-rotate 4s linear infinite; */
   }
 }

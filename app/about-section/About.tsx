@@ -52,7 +52,7 @@ const About = () => {
               src="/About.png"
               alt="Shubham Sahu"
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              className="object-cover  hover:grayscale transition-all duration-700"
               sizes="(max-width: 768px) 100vw, 40vw"
               priority
             />
