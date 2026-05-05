@@ -128,7 +128,7 @@ const Hero = () => {
           className="  max-w-[350px] md:max-w-[400px] lg:max-w-[400px]"
           variants={bodyAnimation}
         >
-          <p className="z-50 text-center text-[16px] font-medium text-[#e4ded7] md:text-[20px] lg:text-left">
+          <p className="z-50 text-center underline text-[16px] font-semibold text-[#e4ded7] md:text-[20px] lg:text-left">
             Student and FullStack Developer
           </p>
         </motion.div>
