@@ -196,7 +196,7 @@ const ProjectCard = ({
                 src={image}
                 alt={name}
                 fill
-                className="object-cover object-top rounded-2xl border border-white/5"
+                className="rounded-2xl border border-white/5"
                 priority={i < 2}
               />
               {/* Subtle overlay */}

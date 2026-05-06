@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import Reviews from "../app/reviews-section/ReviewGrid";
 const Work = dynamic(() => import("../app/work-section/Work"));
 const About = dynamic(() => import("../app/about-section/About"));
+const Experience = dynamic(() => import("../app/experience-section/ExperienceGrid"));
 const Skills = dynamic(() => import("../app/skills-section/Skills"));
 const Blog = dynamic(() => import("../app/blog-section/BlogGrid"));
 const Contact = dynamic(() => import("../app/contact-section/Contact"));
@@ -44,6 +45,7 @@ export default function Home() {
         <Hero />
         <About />
         <Work />
+        <Experience />
         <Skills />
         <Contact />
         <Footer />
