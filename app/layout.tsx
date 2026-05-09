@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "www.devshubham.vercel.app",
     images: [
       {
-        url: "/",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Shubham Sahu — FullStack Engineer",
