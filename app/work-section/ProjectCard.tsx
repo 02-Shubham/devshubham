@@ -93,13 +93,13 @@ const ProjectCard = ({
         {/* Content Section */}
         <div className={`relative flex flex-col lg:flex-row ${
           isEven ? "lg:flex-row-reverse" : ""
-        } min-h-[500px] h-auto sm:h-[750px] lg:h-[650px] w-full px-6 sm:px-10 lg:px-12 py-3 sm:py-5 lg:py-3 items-center justify-between`}
+        } min-h-[500px] h-auto w-full px-6 sm:px-10 lg:px-12 py-10 sm:py-12 lg:py-16 items-center justify-between`}
         >
           {/* Subtle background glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff03] to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
           {/* Text Content */}
-          <div className="w-full lg:w-[45%] flex flex-col justify-center gap-6 z-20 h-full overflow-y-auto pr-2 no-scrollbar" style={{ scrollbarWidth: "none" }}>
+          <div className="w-full lg:w-[45%] flex flex-col justify-center gap-6 z-20 h-full pr-2">
             <style jsx>{`
               .no-scrollbar::-webkit-scrollbar {
                 display: none;
@@ -183,24 +183,23 @@ const ProjectCard = ({
           </div>
 
           {/* Image Section */}
-          <div className="w-full lg:w-[50%] h-[200px] sm:h-[300px] lg:h-[80%] relative rounded-2xl overflow-hidden group mt-2 lg:mt-0 shadow-2xl shrink-0">
+          <div className="w-full lg:w-[50%] h-auto relative rounded-2xl overflow-hidden group mt-6 lg:mt-0 shadow-2xl shrink-0 border border-black/5">
             {/* Decorative container background */}
-            <div className="absolute inset-0 bg-[#f8f8f4] rounded-2xl border border-black/5"></div>
+            <div className="absolute inset-0 bg-[#f8f8f4] rounded-2xl"></div>
             
             <motion.div 
-              className="w-full h-full relative" 
-              whileHover={{ scale: 1.05 }} 
+              className="w-full h-auto relative z-10" 
+              whileHover={{ scale: 1.02 }} 
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Image
                 src={image}
                 alt={name}
-                fill
-                className="rounded-2xl border border-white/5"
+                className="w-full h-auto rounded-2xl"
                 priority={i < 2}
               />
               {/* Subtle overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#12141D] via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#12141D]/20 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
             </motion.div>
           </div>
         </div>

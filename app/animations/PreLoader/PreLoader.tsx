@@ -10,11 +10,11 @@ const PreLoader = () => {
 
   return (
     <div className="preloader gap-[5px] overflow-hidden text-[14px] sm:gap-[10px] sm:text-[16px] md:text-[18px] lg:text-[20px]">
-      <div className="texts-container w-500 flex h-60 items-center justify-center gap-[5px] overflow-hidden text-[14px] font-extrabold text-[#e4ded7] opacity-0 sm:gap-[10px] sm:text-[16px] md:text-[18px] lg:text-[20px]">
+      <div className="texts-container w-500 flex flex-col items-center justify-center gap-[5px] overflow-hidden text-[14px] font-extrabold text-[#e4ded7] opacity-0 sm:gap-[10px] sm:text-[16px] md:text-[18px] lg:text-[20px]">
         
-        <span>Student,</span>
-        <span>Developer,</span>
-        <span>Entrepreneur.</span>
+        <span>Student</span>
+        <span>Developer</span>
+        <span>Entrepreneur</span>
         <div className="sub hidden"></div>
       </div>
     </div>

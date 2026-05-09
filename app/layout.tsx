@@ -76,6 +76,11 @@ export const metadata: Metadata = {
     },
   },
   category: "technology",
+  icons: {
+    icon: "/s.png",
+    shortcut: "/s.png",
+    apple: "/s.png",
+  },
 };
 
 export const viewport: Viewport = {

@@ -5,7 +5,7 @@ export type ProjectProps = {
   technologies: string[];
   github: string;
   demo: string;
-  image: string;
+  image: any;
   available: boolean;
 };
 
