@@ -65,5 +65,16 @@ export const devProjects = [
     image: require(".//../../public/projects/nyayasetu.png"),
     available: true,
   },
+  {
+    id: 5,
+    name: "CottonX",
+    description:
+      "Autonomous AI agent infrastructure for on-chain operations. Features multi-agent orchestration for specialized tasks: DeFi trading execution, smart contract deployment, and marketing automation via natural language.",
+    technologies: ["Next.js", "Express", "Gemini AI", "HeLa Testnet"],
+    github: "https://github.com/02-Shubham",
+    demo: "https://github.com/02-Shubham",
+    image: require(".//../../public/projects/cottonX.png"),
+    available: true,
+  },
 ];
 

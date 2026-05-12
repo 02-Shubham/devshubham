@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     title: "Shubham Sahu — FullStack Engineer",
     description:
       "FullStack Engineer and Web Designer, currently at India. Focused on interfaces and user experiences",
-    url: "https://www.devshubham.vercel.app",
-    siteName: "www.devshubham.vercel.app",
+    url: "https://www.devshubham.xyz",
+    siteName: "www.devshubham.xyz",
     images: [
       {
         url: "/og.png",
